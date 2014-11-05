@@ -27,7 +27,7 @@
     <li>You have run out of bacon</li>
 </ul>
 {% endif %}
-{% if stage != 0 %}<p class="ui-state-highlight">You are on step {{stage}} of 3.</p>{% endif %}
+{% if stage != 0 %}<div class="alert alert-warning" role="alert">You are on step {{stage}} of 3.</div>{% endif %}
 
 {% if stage == 1 %}
 <form method="post">

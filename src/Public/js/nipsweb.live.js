@@ -378,20 +378,20 @@ window.NIPSWeb = {
      */
     setChannelState: function(cid, state) {
         if (state === "playing") {
-            $('#ch' + cid + '-play').button('enable').addClass('ui-state-highlight');
-            $('#ch' + cid + '-pause').button('enable').removeClass('ui-state-highlight');
+            $('#ch' + cid + '-play').button('enable').addClass('alert alert-warning');
+            $('#ch' + cid + '-pause').button('enable').removeClass('alert alert-warning');
             $('#ch' + cid + '-stop').button('enable');
         } else if (state === "stopped" || state === "ok") {
-            $('#ch' + cid + '-play').button('enable').removeClass('ui-state-highlight');
-            $('#ch' + cid + '-pause').button('disable').removeClass('ui-state-highlight');
+            $('#ch' + cid + '-play').button('enable').removeClass('alert alert-warning');
+            $('#ch' + cid + '-pause').button('disable').removeClass('alert alert-warning');
             $('#ch' + cid + '-stop').button('disable');
         } else if (state === "paused") {
-            $('#ch' + cid + '-play').button('disable').removeClass('ui-state-highlight');
-            $('#ch' + cid + '-pause').button('enable').addClass('ui-state-highlight');
+            $('#ch' + cid + '-play').button('disable').removeClass('alert alert-warning');
+            $('#ch' + cid + '-pause').button('enable').addClass('alert alert-warning');
             $('#ch' + cid + '-stop').button('enable');
         } else if (state === "loading") {
             $('#ch' + cid + '-play').button('disable');
-            $('#ch' + cid + '-pause').button('disable').removeClass('ui-state-highlight');
+            $('#ch' + cid + '-pause').button('disable').removeClass('alert alert-warning');
             $('#ch' + cid + '-stop').button('disable');
         }
     },
@@ -558,7 +558,7 @@ window.NIPSWeb = {
         var cid = parseInt(ch) - 1;
         var options = NIPSWeb.baseReq('players/' + cid);
         options.method = 'POST';
-        if ($('#ch' + ch + '-pause').hasClass('ui-state-highlight')) {
+        if ($('#ch' + ch + '-pause').hasClass('alert alert-warning')) {
             options.data = '{"state":"playing"}';
         } else {
             options.data = '{"state":"paused"}';
@@ -589,7 +589,7 @@ window.debug = true;
  //Prevents accidentally dragging when clicking
  distance: 15,
  //Adds a placeholder highlight where the item will be dropped
- placeholder: "ui-state-highlight",
+ placeholder: "alert alert-warning",
  //Remove the "selected" class from the item - prevent multiple selected items in a channel
  //Also activate the next/previous item, if there is one
  start: function(e, ui) {

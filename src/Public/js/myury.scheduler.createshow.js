@@ -21,7 +21,7 @@ $(document).ready(function() {
           if (data.length >= 2) {
             html = html + ' and '+(data.length-1)+' others';
           }
-          $('#sched_show-title-hint').html('<div class="ui-state-highlight">'+html+'</div>');
+          $('#sched_show-title-hint').html('<div class="alert alert-warning" role="alert">'+html+'</div>');
         }
       });
     }
