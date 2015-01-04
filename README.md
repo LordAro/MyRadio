@@ -1,3 +1,5 @@
+This branch is generally the same as master, but with additional features that only currently make sense in the world of URY.
+
 MyRadio
 =======
 
